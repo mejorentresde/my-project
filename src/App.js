@@ -2,6 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import DaisyNavBar from './components/DaisyNavBar';
 import ItemListContainer from './components/ItemListContainer';
+import Props from './components/Props';
+
 
 
 function App() {
@@ -10,7 +12,11 @@ function App() {
 
       <DaisyNavBar/>
 
+      <Props/>
+
       <ItemListContainer/>
+
+
 
 
 

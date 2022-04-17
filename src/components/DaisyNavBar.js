@@ -2,6 +2,7 @@
 import imglogo from '../assets/img/logo-1.png';
 import CartWidget from './CartWidget';
 
+
 const DaisyNavBar = () => {
 
 
@@ -38,6 +39,7 @@ const DaisyNavBar = () => {
 
 
 <CartWidget/>
+
 
 
 
