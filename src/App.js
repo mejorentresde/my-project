@@ -13,8 +13,6 @@ function App() {
     <div className="App">
       <DaisyNavBar/>
       <ItemListContainer titulo="Hola Mundo" />
-      <ItemListContainer titulo="Hola Andy" />
-      <ItemListContainer titulo="Otra Prop" />
 
     <ItemCount stock={9} initial={1}></ItemCount>
 
