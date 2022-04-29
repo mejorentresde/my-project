@@ -17,19 +17,15 @@ function ItemCount(props){
 
 
     return (
-        <div className='container px-5 py-8 mx-auto '>
-        <div className='flex flex-col text-center w-80 mb-12 bg-slate-100 rounded-2xl py-5'>
-            <h1 className='sm:text-3x1 text-2x1 title-font mb  '> Cantidad de productos </h1>
-            <div className=''>
-                <div>
-                <button onClick={handleSubstract} className='w-6 bg-slate-200 hover:bg-slate-300 rounded-full font-bold'> - </button>
-                <span className='font-bold px-3 '> {count} </span>
-                <button onClick={handleAdd} className='w-6 bg-slate-200 hover:bg-slate-300 rounded-full font-bold'> + </button>
+        <div className='py-5 text-2xl w-full '>
+        <div className='flex '>
+                <div className='px-5'>
+                <button onClick={handleSubstract} className='h-24 w-24  hover:bg-slate-200 rounded-full font-bold text-pink-600'> - </button>
+                <span className='h-24 font-bold px-10 '>{count}</span>
+                <button onClick={handleAdd} className='h-24 w-24  hover:bg-slate-200 rounded-full font-bold text-pink-600'> + </button>
+                    <button className='h-24 px-15 hover:bg-slate-200 px-10 rounded-lg font-bold text-pink-600 hover:text-pink-700'> Agregar al Carrito </button>
                 </div>
-                <div className='pt-3'>
-                    <button className='bg-slate-200 hover:bg-slate-300 w-48 py-1 rounded-lg font-bold text-pink-600 hover:text-pink-700'> Agregar al Carrito </button>
-                </div>
-            </div>
+
         </div>
         </div>
     )

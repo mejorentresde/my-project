@@ -4,8 +4,8 @@ import imgprincipal from '../assets/img/principal.jpg';
 const Principal = () => {
   return (
     
-    <div className='flex px-10'>
-      <img className = "object-cover h-180 w-96 rounded-3xl" src={imgprincipal} alt="logo"/>
+    <div className='flex flex-row px-12'>
+      <img className = "object-cover h-180 w-96 rounded-3xl hover:scale-105 duration-700 ease-in-out" src={imgprincipal} alt="logo"/>
       <div className='flex-1 p-40'>
       <h2 className='text-4xl font-bold py-5'>Feel the Pink Blue Power</h2>
       <p className='text-3xl py-6 '>BluePinkPanther is a contemporary fashion brand influenced by the courage of modern youth culture.</p>

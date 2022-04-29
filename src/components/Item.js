@@ -9,6 +9,7 @@ function Item( {product} ) {
       <h3>{product.size}</h3>
       <h4>{product.stock}</h4>
       <h2>${product.price}</h2>
+      <h2>{product.imgURL}</h2>
       <hr/>
       <br/>
     </div>
