@@ -1,32 +1,32 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom';
 import productsDB from '../data/products'
 import ItemDetail from './ItemDetail';
 
 
 function getProduct(id) {
-    return new Promise( (resolve, reject) => {
-        setTimeout (() => {
-            const productFound = productsDB.find ( (product) => {
-                return id === product.id
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const productFound = productsDB.find((product) => {
+                return parseInt(id) === product.id;
             })
-            resolve (productFound);
-        }, 2000);
+            resolve(productFound);
+        }, 100);
     });
 }
 
-function ItemDetailContainer( {id} ) {
+function ItemDetailContainer() {
     const [product, setProduct] = useState([]);
-
+    const { itemid } = useParams();
     useEffect(() => {
-        getProduct(id).then (respuestaPromise => {
+        getProduct(itemid).then(respuestaPromise => {
             setProduct(respuestaPromise);
         });
-    }, []);
+    }, [itemid]);
 
     return (
         <section className='text-gray-600 body-font'>
-            <ItemDetail product={product}/>
-            
+            <ItemDetail product={product} />
         </section>
     )
 }

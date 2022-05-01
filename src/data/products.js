@@ -14,7 +14,7 @@ const products = [
     stock: 12,
     price: 14.99,
     category:"top",
-    imgURL: "https://i.ibb.co/0MpDbfp/remera-01.jpg",
+    imgURL: "https://i.ibb.co/xSjvQbk/remera-01.jpg",
   }, {
     id: 3,
     title: "Long-sleeved Cotton Top",
@@ -22,7 +22,7 @@ const products = [
     stock: 13,
     price: 22.99,
     category:"top",
-    imgURL: "https://i.ibb.co/bdCSWLh/longsleeve-01.jpg",
+    imgURL: "https://i.ibb.co/ZmrbyZ8/longsleeve-01.jpg",
   }, {
     id: 4,
     title: "Regular Fit Sweatshort",
@@ -30,7 +30,7 @@ const products = [
     stock: 13,
     price: 9.99,
     category:"bottom",
-    imgURL: "https://i.ibb.co/rQ3kJM2/short-04.jpg",
+    imgURL: "https://i.ibb.co/XZ4HTxw/short-04.jpg",
   }, {
     id: 5,
     title: "Straight High Jeans",
@@ -38,7 +38,7 @@ const products = [
     stock: 23,
     price: 18.99,
     category:"bottom",
-    imgURL: "<https://i.ibb.co/gRf4q7t/jeans-01.jpg",
+    imgURL: "https://i.ibb.co/fpkzvtv/jeans-01.jpg",
   }, {
     id: 6,
     title: "High Waist Joggers",
@@ -46,7 +46,7 @@ const products = [
     stock: 13,
     price: 13.99,
     category:"bottom",
-    imgURL: "https://i.ibb.co/SBs49XL/joggins-01.jpg",
+    imgURL: "https://i.ibb.co/x383mgh/joggins-01.jpg",
   }, ]
 
   export default products;

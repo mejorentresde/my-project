@@ -12,12 +12,17 @@ function App() {
 
       <BrowserRouter>
         <DaisyNavBar />
+        <Principal />
         <Routes>
           <Route path="/" element={<ItemListContainer titulo="Hola desde React Router" />} />
           <Route path="/category/:categoryid" element={<ItemListContainer titulo="Categoria de Productos" />} />
-          <Route path="/product/:itemid" element={<ItemDetailContainer id={1} />} />
+          <Route path="/product/:itemid" element={<ItemDetailContainer />} />
         </Routes>
       </BrowserRouter>
+
+
+
+
 
     </div>
   );
