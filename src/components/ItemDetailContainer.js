@@ -16,6 +16,9 @@ function getProduct(id) {
 }
 
 function ItemDetailContainer() {
+    function onAdd (count) {
+        console.log(`Agregaste al Carrito ${count} items`);
+    }
     const [product, setProduct] = useState([]);
     const { itemid } = useParams();
     useEffect(() => {
@@ -26,7 +29,7 @@ function ItemDetailContainer() {
 
     return (
         <section className='text-gray-600 body-font'>
-            <ItemDetail product={product} />
+            <ItemDetail onAdd={onAdd} product={product} />
         </section>
     )
 }

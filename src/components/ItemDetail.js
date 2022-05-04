@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ItemCount from './ItemCount';
 
 const ItemDetail = ({ product }) => {
-    return (
+    const [isInCart, setIsInCart] = useState (false);
 
+    function onAdd (count) {
+        console.log(`Agregaste al Carrito ${count} items`);
+        setIsInCart(true);
+    }
+
+    return (
         <div className='px-10 w-full pt-3 pb-10 text-xl'>
             <div className='shadow-xl bg-white p-2 rounded-2xl flex flex-row'>
                 <div>
@@ -20,8 +26,14 @@ const ItemDetail = ({ product }) => {
                     <div className='font text-2x1 text-gray-900'>
                         <h2 className='mb-1'>USD {product.price}</h2>
                     </div>
-                    <ItemCount stock={product.stock } initial={1}></ItemCount>
+
+                    { isInCart? 
+                        <button className='py-6 text-pink-600 font-bold text-left'>Ir al Carrito</button>
+                    :
+                    <ItemCount onAdd={onAdd} stock={product.stock} initial={1}></ItemCount>
+                }
                     <p className=''> {product.description} </p>
+                    
                 </div>
 
             </div>
