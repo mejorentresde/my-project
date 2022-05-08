@@ -1,13 +1,16 @@
 import React, { useState } from 'react'
 import ItemCount from './ItemCount';
+import useCartContext from '../store/CartContext';
 
 const ItemDetail = ({ product }) => {
     const [isInCart, setIsInCart] = useState (false);
+    const { addToCart } = useCartContext();
 
     function onAdd (count) {
-        console.log(`Agregaste al Carrito ${count} items`);
         setIsInCart(true);
-    }
+        addToCart (product, count)
+        console.log ("Agregado al cart: ", product, count);
+    };
 
     return (
         <div className='px-10 w-full pt-3 pb-10 text-xl'>

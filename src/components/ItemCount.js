@@ -15,8 +15,6 @@ function ItemCount(props){
         } else { alert ("No puedes tener menos de 1 producto")};
     }
 
-
-
     return (
         <div className='py-5 text-2xl w-full '>
         <div className='flex '>
