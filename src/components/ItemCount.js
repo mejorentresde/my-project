@@ -6,13 +6,13 @@ function ItemCount(props){
     function handleAdd() {
         if (count < props.stock) {
             setCount (count + 1)
-        } else {alert ("No hay mas stock")}
+        } else {alert ("No more stock")}
     }
 
     function handleSubstract() {
         if (count > 1) {
             setCount (count - 1)
-        } else { alert ("No puedes tener menos de 1 producto")};
+        } else { alert ("You can't have less than one product")};
     }
 
     return (

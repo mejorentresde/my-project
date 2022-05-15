@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import ItemCount from './ItemCount';
 import useCartContext from '../store/CartContext';
+import { Link } from 'react-router-dom';
 
 const ItemDetail = ({ product }) => {
     const [isInCart, setIsInCart] = useState (false);
@@ -9,7 +10,7 @@ const ItemDetail = ({ product }) => {
     function onAdd (count) {
         setIsInCart(true);
         addToCart (product, count)
-        console.log ("Agregado al cart: ", product, count);
+        console.log ("Add to cart: ", product, count);
     };
 
     return (
@@ -31,7 +32,7 @@ const ItemDetail = ({ product }) => {
                     </div>
 
                     { isInCart? 
-                        <button className='py-6 text-pink-600 font-bold text-left'>Ir al Carrito</button>
+                        <button className='py-6 text-pink-600 font-bold text-left'><Link to="/cart">Go to Cart</Link></button>
                     :
                     <ItemCount onAdd={onAdd} stock={product.stock} initial={1}></ItemCount>
                 }

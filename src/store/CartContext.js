@@ -1,16 +1,17 @@
 import { createContext, useState, useContext } from "react";
+import ItemCount from "../components/ItemCount";
 
+export const CartContext = createContext( { cart: [] } );
+export const useCartContext = () => useContext(CartContext);
 
-const CartContext = createContext();
-const useCartContext = () => useContext(CartContext);
-
-const { Provider } = CartContext;
+export const { Provider } = CartContext;
 
 
 export function CartContextProvider({ children }) {
     //cart es el carrito
     //setCart es la funcion que usamos para sobreescribir el carrito en el state
     const [cart, setCart] = useState([]);
+
 
 
     //isInCart es una funcion que devuevle true o false
@@ -41,10 +42,11 @@ export function CartContextProvider({ children }) {
                     return copyItem
                 }
                 else {
-                    return itemInCart
+                    return itemInCart;
                 }
             })
             setCart (newCart); //sobreescribimos el carrito con el nuevo
+
         }
         else {
             const newItem = {...item, cant};
@@ -70,10 +72,11 @@ export function CartContextProvider({ children }) {
         setCart([])
     }
 
+
     const contextFunction = () => console.log("Contexto listo");
 
     return (
-        <Provider value={{ contextFunction, cart, addToCart, removeFromCart, clearCart }}>
+        <Provider value={{ contextFunction, cart, setCart, addToCart, removeFromCart, clearCart}}>
             {children}
         </Provider>
     )
