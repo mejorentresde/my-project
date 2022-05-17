@@ -32,7 +32,6 @@ const DaisyNavBar = () => {
           </li>
           <li className='text-primary'><Link to="/category/top">Top</Link></li>
           <li className='text-primary'><Link to="/category/bottom">Bottom</Link></li>
-          <li className='text-primary'><Link to="/category/accesories">Accessories</Link></li>
           <li className='text-primary'><Link to="/category/combos">Combos</Link></li>
         </ul>
       </div>

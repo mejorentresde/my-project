@@ -4,7 +4,7 @@ import { useCartContext } from '../store/CartContext'
 
 const CartWidget = () => {
 
-  const {cart} = useCartContext()
+  const {cart, total} = useCartContext()
 
   return (
 
@@ -21,30 +21,14 @@ const CartWidget = () => {
         <div tabindex="0" class="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow">
           <div class="card-body">
             <span class="font-bold text-lg">{cart.length} Item/s</span>
-            <span class="text-info">Subtotal: $ {cart.price}</span>
+            <span class="text-info">Subtotal: $ {total()}</span>
             <div class="card-actions">
               <button class="btn btn-primary btn-block"><Link to="/cart">View cart</Link></button>
             </div>
           </div>
         </div>
       </div>
-      <div class="dropdown dropdown-end">
-        <label tabindex="0" class="btn btn-ghost btn-circle avatar">
-          <div class="w-10 rounded-full">
-            <img src="https://api.lorem.space/image/face?hash=33791" />
-          </div>
-        </label>
-        <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-          <li>
-            <a class="justify-between">
-              Profile
-              <span class="badge">New</span>
-            </a>
-          </li>
-          <li><a>Settings</a></li>
-          <li><a>Logout</a></li>
-        </ul>
-      </div>
+
     </div>
   </div>
 

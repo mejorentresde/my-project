@@ -10,7 +10,6 @@ import Cart from './components/Cart';
 
 
 
-
 function App() {
   return (
     <div className="App">
@@ -23,7 +22,9 @@ function App() {
             <Route path="/category/:categoryid" element={<ItemListContainer />} />
             <Route path="/product/:itemid" element={<ItemDetailContainer />} />
             <Route path="/cart" element={<Cart/>}/> 
+
           </Routes>
+
         </BrowserRouter>
       </CartContextProvider>
 

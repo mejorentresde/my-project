@@ -1,10 +1,14 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import Products from './firebase-examples/Products';
+
+
 
 function Item({ product }) {
   return (
+    
 
-    <div className=' w-1/3 px-3 pt-3 pb-3 text-xl hover:scale-105 duration-700 ease-in-out'>
+    <div className=' w-1/4 px-3 pt-3 pb-3 text-xl hover:scale-105 duration-700 ease-in-out'>
       <div className='shadow-xl bg-white p-2 rounded-2xl'>
         <div>
           <img
