@@ -3,7 +3,7 @@ import ItemCount from './ItemCount';
 import useCartContext from '../store/CartContext';
 import { Link } from 'react-router-dom';
 
-const ItemDetail = ({ product }) => {
+function ItemDetail({ product }) {
     const [isInCart, setIsInCart] = useState (false);
     const { addToCart } = useCartContext();
 

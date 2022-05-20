@@ -75,7 +75,6 @@ export function CartContextProvider({ children }) {
                 console.log(s.data());
                 productsList.push({ id: s.id, ...s.data() })
             })
-            console.log(productsList);
             setProducts(productsList); // guardamos los products
             
         })
@@ -115,7 +114,7 @@ export function CartContextProvider({ children }) {
     const contextFunction = () => console.log("Contexto listo");
 
     return (
-        <Provider value={{ contextFunction, cart, setCart, addToCart, removeFromCart, clearCart, quantity, total,GetProducts, getProductsByCategory }}>
+        <Provider value={{ contextFunction, cart, setCart, addToCart, removeFromCart, clearCart, quantity, total, GetProducts, getProductsByCategory }}>
             {children}
         </Provider>
     )

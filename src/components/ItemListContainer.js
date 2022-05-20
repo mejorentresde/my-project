@@ -8,22 +8,10 @@ import { useCartContext } from "../store/CartContext";
 
 function ItemListContainer() {
 
-    const { GetProducts, getProductsByCategory } = useCartContext()//este es el context 
-    //const [products, setProducts] = useState([]);
+    const { GetProducts, getProductsByCategory } = useCartContext() //este es el context 
     const { categoryid } = useParams();
 
-   /* useEffect(() => {
-
-        console.log(1);
-        //LLAMAR AL GETpRODUCTS DE CARTCONTETX
-        GetProducts().then(()=> {
-            console.log(2);
-            const products = getProductsByCategory(categoryid)
-            setProducts(products);
-        });
-    }, [categoryid]);*/
-    const products = getProductsByCategory(categoryid)
-           // setProducts(products);
+    const products = getProductsByCategory(categoryid);
 
     return (
         <div className=''><ItemList products={products} /></div>

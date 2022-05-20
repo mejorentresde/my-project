@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
 import productsDB from '../data/products'
 import Products from './firebase-examples/Products';
 import ItemDetail from './ItemDetail';
+import { useParams } from 'react-router-dom';
+
 
 
 function getProduct(id) {
@@ -29,9 +30,7 @@ function ItemDetailContainer() {
     }, [itemid]);
 
     return (
-        <section className='text-gray-600 body-font'>
-            <ItemDetail onAdd={onAdd} product={product} />
-        </section>
+        <div className=''><ItemDetail onAdd={onAdd} product={product}/></div>
     )
 }
 
