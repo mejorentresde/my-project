@@ -1,4 +1,4 @@
-import { getDocs, getFirestore, collection } from "firebase/firestore";
+import { getDocs, getFirestore, collection, query, where, getDoc, doc } from "firebase/firestore";
 import { createContext, useState, useContext } from "react";
 
 export const CartContext = createContext({ cart: [] });
@@ -12,6 +12,7 @@ export function CartContextProvider({ children }) {
     //setCart es la funcion que usamos para sobreescribir el carrito en el state
     const [cart, setCart] = useState([]);
     const [products, setProducts] = useState([])
+    const [product, setProduct] = useState([])
 
 
     const quantity = () => cart.reduce((sum, i) => { return sum + i.cant }, 0)
@@ -64,6 +65,8 @@ export function CartContextProvider({ children }) {
 
 
     const GetProducts = () => {
+        console.log("get prouts")
+
         // hacer lo que hiciste en products 
         const db = getFirestore()
         const Collection = collection(db, 'colection-1')
@@ -72,18 +75,48 @@ export function CartContextProvider({ children }) {
             snapshot.docs.forEach((s) => {
                 productsList.push({ id: s.id, ...s.data() })
             })
+            console.log(productsList)
+
             setProducts(productsList); // guardamos los products
             
         })
     }
 
-    const getProductsByCategory = (categoryId) => {
+    const GetProductsByCategory = (categoryId) => {
+        console.log("get prouts by cate", categoryId)
         if (categoryId) { // si me mandaron alguna categoryId
-            return products.filter((product) => {
-                return product.category == categoryId;
+          //  return products.filter((product) => {
+            //    return product.category == categoryId;
+           // })
+
+           const db = getFirestore()
+            const Collection = collection(db, 'colection-1')
+            const q = query(Collection, where("category", '==',categoryId))
+            return getDocs(q).then((snapshot) => {
+                const productsList = []
+                snapshot.docs.forEach((s) => {
+                    productsList.push({ id: s.id, ...s.data() })
+                })
+                console.log(productsList)
+                setProducts(productsList); // guardamos los products
+                
             })
         }
-        return products
+        else GetProducts()
+       // return products
+    }
+
+    const GetProductById = (productId) => {
+        console.log("get product b id", productId)
+        const db = getFirestore()
+    const Collection = collection(db, 'colection-1')
+    const q = query(Collection, where("id", '==',Number(productId)))
+        return getDocs(q).then((snapshot) => {
+            const doc = snapshot.docs[0].data()
+            console.log(doc)
+            console.log(snapshot)
+            setProduct(doc)
+        })
     }
 
 
@@ -107,11 +140,8 @@ export function CartContextProvider({ children }) {
         setCart([])
     }
 
-
-    const contextFunction = () => console.log("Contexto listo");
-
     return (
-        <Provider value={{ contextFunction, cart, setCart, addToCart, removeFromCart, clearCart, quantity, total, GetProducts, getProductsByCategory }}>
+        <Provider value={{cart, setCart, addToCart, removeFromCart, clearCart, quantity, total, GetProducts, GetProductsByCategory, products, product, GetProductById}}>
             {children}
         </Provider>
     )

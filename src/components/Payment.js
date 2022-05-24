@@ -12,41 +12,20 @@ const Payment = () => {
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
-    const [message, setMessage] = useState("");
+    const [dni, setDni] = useState("");
 
-
-
-    /*const handleSubmit = (e) => {
-        e.preventDefault();
-
-        db.collection('orders').add({
-            name: name,
-            email: email,
-            message: message,
-
-        })
-        .then(() => {
-            alert('Message has been submitted');
-        })
-        .catch(error => {
-            alert(error.message);
-        })
-
-        setName("")
-        setEmail("")
-        setMessage("")
-    };*/
 
 
     useEffect(() => {
     }, [])
 
 
-    const Checkout = async () => {
+    const Checkout = async (e) => {
+        e.preventDefault()
         const user = {
             name: name,
             email: email,
-            message: message,
+            dni: dni,
         }
 
         const cartMaped = cart.map(({ id, title, price }) => ({ id, title, price }));
@@ -61,6 +40,7 @@ const Payment = () => {
 
         const db = getFirestore()
         const cartCollection = collection(db, 'orders');
+        console.log("ajflkasjfklsajfklsajflsajakl",ItemToCheckout)
 
         const response = await addDoc(cartCollection, ItemToCheckout)
         //console.log(response);
@@ -109,8 +89,8 @@ const Payment = () => {
                     DNI:
                 </label>
                 <input className='shadow border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline' 
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
+                    value={dni}
+                    onChange={(e) => setDni(e.target.value)}
                 />
                 </div>
                 <button type="submit" onClick={Checkout} className='bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline'>Confirm</button>

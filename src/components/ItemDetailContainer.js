@@ -23,22 +23,30 @@ function ItemDetailContainer() {
     function onAdd (count) {
         console.log(`Agregaste al Carrito ${count} items`);
     }
-    const [product, setProduct] = useState([]);
+    //const [product, setProduct] = useState([]);
     const { itemid } = useParams();
 
 
-    const { getProductsByCategory } = useCartContext() //este es el context 
+    const { GetProductsByCategory, GetProductById, product } = useCartContext() //este es el context 
 
-    const products = getProductsByCategory()
+    //const products = getProductsByCategory()
 
-    useEffect(() => {
-        getProduct(products, itemid).then(respuestaPromise => {
-            setProduct(respuestaPromise);
-        });
-    }, [itemid]);
+    //useEffect(() => {
+     //   console.log("item detail container")
+      //  GetProductById(itemid).then(respuestaPromise => {
+        //    setProduct(respuestaPromise);
+       // });
+    //}, [itemid]);
+    useEffect(() => { // useEffect solo se puede usar en componentes. Coponent: function que renderiza algo
+        console.log("item detail container")
+        async function fetchData() {
+          await GetProductById(itemid); // hace una llamada a la base de datos y guarda los productos en memoria, en el estado general
+        }
+        fetchData();
+      }, [itemid]); // cuando cambie category id se llama a lo de adentro de useEffect
 
     return (
-        <div className=''><ItemDetail onAdd={onAdd} product={product}/></div>
+        product && <div className=''><ItemDetail onAdd={onAdd} product={product}/></div>
     )
 }
 

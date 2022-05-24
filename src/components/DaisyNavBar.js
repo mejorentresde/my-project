@@ -5,8 +5,6 @@ import {Link} from 'react-router-dom';
 import useCartContext from '../store/CartContext';
 
 const DaisyNavBar = () => {
-  const { contextFunction } = useCartContext();
-  contextFunction();
 
   return (
     <div className="navbar bg-base-100">

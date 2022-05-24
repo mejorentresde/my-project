@@ -5,28 +5,23 @@ import { useCartContext } from "../store/CartContext";
 import { getDocs, getFirestore, collection } from "firebase/firestore";
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 function ItemListContainer() {
 
-    const { getProductsByCategory } = useCartContext() //este es el context 
+    const { GetProductsByCategory, products } = useCartContext() //este es el context 
     const { categoryid } = useParams();
+    
+    useEffect(() => { // useEffect solo se puede usar en componentes. Coponent: function que renderiza algo
+        console.log("item lis container")
+        async function fetchData() {
+          await GetProductsByCategory(categoryid); // hace una llamada a la base de datos y guarda los productos en memoria, en el estado general
+        }
+        fetchData();
+      }, [categoryid]); // cuando cambie category id se llama a lo de adentro de useEffect
 
-    const products = getProductsByCategory(categoryid);
+      console.log(products)
 
     return (
-        <div className=''><ItemList products={products} /></div>
+       products && <div className=''><ItemList products={products} /></div>
     )
 }
 
