@@ -1,7 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, Component } from 'react'
 import ItemCount from './ItemCount';
 import useCartContext from '../store/CartContext';
 import { Link } from 'react-router-dom';
+import Size from './Size';
+import Select from 'react-select'
+
 
 function ItemDetail({ product }) {
     const [isInCart, setIsInCart] = useState (false);
@@ -14,31 +17,36 @@ function ItemDetail({ product }) {
     };
 
     return (
-        <div className='px-10 w-full pt-3 pb-10 text-xl'>
+        
+        <div className='px-10  pt-3 text-left'>
             <div className='shadow-xl bg-white p-2 rounded-2xl flex flex-row'>
                 <div>
                     <img
                         alt={product.title}
-                        className="rounded-2xl w-5/5 object-center"
+                        className="rounded-2xl w-5/6 "
                         src={product.imgURL}
                     />
                 </div>
-                <div className='flex flex-col pl-20 text-left'>
-                    <h3 className='h-50 text-grey-800 font-bold title-font py-3'>
+                <div className=''>
+                    <h3 className='text-xl text-grey-800 font-bold '>
                         {product.title}
                     </h3>
-                    <div className='font text-2x1 text-gray-900'>
-                        <h2 className='mb-1'>USD {product.price}</h2>
-                    </div>
+                        <h2 className='text-xl '>USD {product.price}</h2>
 
                     { isInCart? 
-                        <button className='py-6 text-pink-600 font-bold text-left'><Link to="/cart">Go to Cart</Link></button>
+                        <button className='py-6 text-pink-600 font-bold '><Link to="/cart">Go to Cart</Link></button>
                     :
-                    <ItemCount onAdd={onAdd} stock={product.stock} initial={1}></ItemCount>
-                }
-                    <p className=''> {product.description} </p>
+                    <>
+                    <div className=''><ItemCount onAdd={onAdd} stock={product.stock} initial={1}></ItemCount></div>
+                    {/*<div className=''><Size onAdd={onAdd}></Size></div>*/}
+
                     
-                </div>
+                    </>
+                }
+
+                    <div className=' '> Description: {product.description} </div>
+                    </div>
+
 
             </div>
         </div>

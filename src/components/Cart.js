@@ -23,7 +23,7 @@ const Cart = () => {
                 </div>
 
                 <Link to="/payment"><div className=''>
-                <button className='text-lg w-96 bg-secondary hover:bg-blue-800 text-white font-bold py-2 px-4 rounded-xl'>
+                <button className='text-lg w-96 bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded-2xl'>
                     <h1 className='	'>Total: USD {total()}</h1>
                     Checkout
                 </button>

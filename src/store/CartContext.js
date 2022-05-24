@@ -1,6 +1,5 @@
 import { getDocs, getFirestore, collection } from "firebase/firestore";
-import { createContext, useState, useContext, useEffect } from "react";
-import ItemCount from "../components/ItemCount";
+import { createContext, useState, useContext } from "react";
 
 export const CartContext = createContext({ cart: [] });
 export const useCartContext = () => useContext(CartContext);
@@ -17,6 +16,8 @@ export function CartContextProvider({ children }) {
 
     const quantity = () => cart.reduce((sum, i) => { return sum + i.cant }, 0)
     const total = () => cart.reduce((sum, i) => { return sum + (i.cant * i.price) }, 0)
+    
+
 
     //isInCart es una funcion que devuevle true o false
     //true si el itemID esta en el carrito
@@ -63,16 +64,12 @@ export function CartContextProvider({ children }) {
 
 
     const GetProducts = () => {
-        console.log(3);
         // hacer lo que hiciste en products 
-        console.log(4);
         const db = getFirestore()
         const Collection = collection(db, 'colection-1')
         return getDocs(Collection).then((snapshot) => {
-            console.log(5);
             const productsList = []
             snapshot.docs.forEach((s) => {
-                console.log(s.data());
                 productsList.push({ id: s.id, ...s.data() })
             })
             setProducts(productsList); // guardamos los products
