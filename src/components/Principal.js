@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import ItemListContainer from './ItemListContainer';
 import Footer from './Footer';
 import { useCartContext } from "../store/CartContext";
+import Carrousel from './Carrousel';
 
 
 const Principal = () => {
@@ -19,7 +20,10 @@ const Principal = () => {
 
 
   return (
+    
     <div>
+
+
       <div className='flex flex-row px-12 py-5 '>
         <img className=" w-2/5 rounded-2xl  " src={imgprincipal} alt="logo" />
         <div className='   grid place-items-center  '>
