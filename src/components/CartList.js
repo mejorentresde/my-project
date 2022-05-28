@@ -9,9 +9,9 @@ const CartList = ({ product }) => {
     return (
 
 <div className='flex flex-col py-1 '>
-        <div className='shadow-xl bg-white py-1 px-3 rounded-2xl flex items-center   '>
+        <div className='shadow-xl bg-white py-1 px-3 rounded-2xl flex items-center justify-between   '>
 
-                <img alt={product.title} className="rounded-2xl w-1/12   " src={product.imgURL} />
+                <img alt={product.title} className="rounded-xl w-1/12   " src={product.imgURL} />
 
                 <h3 className='font-bold px-6  	'> {product.title} </h3>
 

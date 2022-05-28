@@ -3,7 +3,7 @@ import Item from './Item'
 
 function ItemList ( {products} )  {
   return (
-    <div className='flex flex-row flex-wrap'>
+    <div className='px-8 flex flex-wrap justify-center'>
     { products.map (thisproduct => {
       return (
         <Item product = {thisproduct} key={thisproduct.id} />

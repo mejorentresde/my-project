@@ -15,9 +15,10 @@ export function CartContextProvider({ children }) {
     const [product, setProduct] = useState([])
 
 
-    const quantity = () => cart.reduce((sum, i) => { return sum + i.cant }, 0)
-    const total = () => cart.reduce((sum, i) => { return sum + (i.cant * i.price) }, 0)
-    
+    const quantity = () => cart.reduce((sum, i) => { return parseInt(sum + i.cant) }, 0)
+    //const total = () => cart.reduce((sum, i) => { return sum + i.cant * i.price }, 0)
+    const total = () => cart.reduce((sum, i) => { return sum + i.cant * i.price }, 0)
+
 
 
     //isInCart es una funcion que devuevle true o false

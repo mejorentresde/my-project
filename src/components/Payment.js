@@ -19,9 +19,9 @@ const Payment = () => {
     useEffect(() => {
     }, [])
 
-
     const Checkout = async (e) => {
-        e.preventDefault()
+        e.preventDefault();
+
         const user = {
             name: name,
             email: email,
@@ -40,10 +40,15 @@ const Payment = () => {
 
         const db = getFirestore()
         const cartCollection = collection(db, 'orders');
-        console.log("ajflkasjfklsajfklsajflsajakl",ItemToCheckout)
 
         const response = await addDoc(cartCollection, ItemToCheckout)
         //console.log(response);
+        alert("Thank you for your purchase ☺️")
+
+
+
+
+        
     }
 
 
@@ -58,15 +63,13 @@ const Payment = () => {
 
     return (
 
-        <div className=' grid place-items-center '>
-            {/*<button onClick={updateCart} className='btn'>Update document</button>*/}
+        <div className='  flex justify-center  '>
 
-
-            <form className='bg-white shadow-md rounded-xl px-8 pt-6 pb-8 mb-4  w-3/12' onSubmit={Checkout}>
+            <form className='bg-white shadow-xl rounded-2xl px-8 pt-6 pb-8 mb-4 w-2/6' onSubmit={Checkout}>
 
                 <div className='mb-4'>
-                    <label className='block text-gray-700 text-sm font-bold mb-2'>
-                        Name:
+                    <label className=' text-gray-700 text-sm font-bold '>
+                    😎 Name:
                     </label>
                     <input className=' shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline " id="username' 
                         value={name}
@@ -74,9 +77,9 @@ const Payment = () => {
                     />
                 </div>
 
-                <div className='mb-6'>
+                <div className='mb-4'>
                 <label className='block text-gray-700 text-sm font-bold mb-2'>
-                    Email:
+                📧 Email:
                 </label>
                 <input className='shadow  border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline'
                     value={email}
@@ -84,16 +87,16 @@ const Payment = () => {
                 />
                 </div>
 
-                <div className='mb-6'>
+                <div className='mb-4'>
                 <label className='block text-gray-700 text-sm font-bold mb-2'>
-                    DNI:
+                🆔 ID:
                 </label>
                 <input className='shadow border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline' 
                     value={dni}
                     onChange={(e) => setDni(e.target.value)}
                 />
                 </div>
-                <button type="submit" onClick={Checkout} className='bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline'>Confirm</button>
+                <button type="submit" onClick={Checkout} className='bg-black hover:bg-pink-500  text-white font-bold py-2 px-4 rounded-l '>Confirm</button>
 
             </form>
         </div>

@@ -17,19 +17,19 @@ const Cart = () => {
         return (
             <>
 
-<div className='pb-10 flex flex-col grid place-items-center '>
+<div className='pb-10 flex flex-col grid place-items-center  '>
             <div className='pb-10 '>
                     {cart.map(f => <CartList key={f.id} product={f} />)}
                 </div>
 
                 <Link to="/payment"><div className=''>
-                <button className='text-lg w-96 bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded-2xl'>
-                    <h1 className='	'>Total: USD {total()}</h1>
-                    Checkout
+                <button className='text-lg w-96 bg-black hover:bg-pink-500 text-white font-bold py-2 px-4 rounded-l'>
+                    <h1 className='	'>Total: USD {parseFloat(total()).toFixed(2)}</h1>
+                    Checkout 🛒
                 </button>
                 </div></Link>
 
-                <button className='text-lg text-boldtext-primary px-10 py-3' onClick={() => { clearCart() }}> Clear cart</button>
+                <button className='text-lg  text-primary px-10 py-3' onClick={() => { clearCart() }}> Clear cart</button>
                 </div>
             </>
         )

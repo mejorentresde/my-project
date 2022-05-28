@@ -23,7 +23,7 @@ function ItemDetail({ product }) {
                 <div>
                     <img
                         alt={product.title}
-                        className="rounded-2xl h-full "
+                        className="rounded-2xl"
                         src={product.imgURL}
                     />
                 </div>
@@ -38,32 +38,34 @@ function ItemDetail({ product }) {
                         :
                         <>
                             <div className=''><ItemCount onAdd={onAdd} stock={product.stock} initial={1}></ItemCount></div>
-                            {/*<div className=''><Size onAdd={onAdd}></Size></div>*/}
+
+
+                            <div className=''><Size onAdd={onAdd}></Size></div>
 
 
                         </>
-                    }
+                    }   
 
                     <div className='pt-10'>
-                    <hr></hr>
+                        <hr></hr>
 
-                    <h3 className=' pt-3 font-bold'> Description  </h3>
-                    <p className='pb-3'>{product.description}</p>
+                        <h3 className=' pt-3 font-bold'> Description  </h3>
+                        <p className='pb-3'>{product.description}</p>
 
-                    <hr></hr>
+                        <hr></hr>
 
-                    <h3 className='pt-6 font-bold'>Materials</h3>
-                    <p className='pb-3'>Our goal is to use 100% recycled or other sustainably sourced materials by 2030.</p>
-                    <hr></hr>
+                        <h3 className='pt-6 font-bold'>Materials</h3>
+                        <p className='pb-3'>Our goal is to use 100% recycled or other sustainably sourced materials by 2030.</p>
+                        <hr></hr>
 
-                    <h3 className='pt-6 font-bold'>Delivery</h3>
-                    <p className='pb-3'>Shipping is available to customers at least 13 years of age with a valid shipping and billing address.</p>
+                        <h3 className='pt-6 font-bold'>Delivery</h3>
+                        <p className='pb-3'>Shipping is available to customers at least 13 years of age with a valid shipping and billing address.</p>
 
-                    <hr></hr>
+                        <hr></hr>
 
-                    <h3 className='pt-6 font-bold'>Payment</h3>
-                    <p className='pb-3'>We accept card payments via Visa, Apple Pay, MasterCard, Discover and American Express. </p>
-                    <hr></hr>
+                        <h3 className='pt-6 font-bold'>Payment</h3>
+                        <p className='pb-3'>We accept card payments via Visa, Apple Pay, MasterCard, Discover and American Express. </p>
+                        <hr></hr>
                     </div>
 
                 </div>

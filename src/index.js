@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import 'tw-elements';
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
