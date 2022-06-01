@@ -1,4 +1,4 @@
-# Proyecto de React ecomerce
+# Proyecto de React ecommerce
 
 Para iniciar este proyecto simplemente ejecutar:
 `npm start`
