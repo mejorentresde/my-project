@@ -92,12 +92,12 @@ const Carousel = () => {
         // set with position relative, so we can place our cotrol buttons using
         // absolute positioning on each side of the image.
         <div className="px-12 pb-6 flex justify-center w-full items-end ">
-            <div className="relative w-full ">
+            <div className="relative w-full  ">
                 <div className="carousel">
                     {sliderControl(true)}
                     {images.map((img, i) => (
                         <div className="flex-shrink-0  " key={img} ref={refs[i]}>
-                            <img src={img} className="w-full  rounded-xl " />
+                            <img src={img} className="w-full   px-3   " />
                         </div>
                     ))}
                     {sliderControl()}
@@ -105,7 +105,7 @@ const Carousel = () => {
             </div>
 
             <div className=
-                'absolute  text-xl  w-30 rounded-xl flex  text-pink-500 pb-6	'>
+                'absolute  text-xl  w-30 rounded-xl flex  text-pink-500 pb-6 	'>
                 <ul className="flex content-center ">
                     <li className='bg-black bg-opacity-80 py-3 w-40 mx-3 rounded-l	 text-white  hover:scale-105 duration-100 ease-in-out'><Link to="/category/top">Top</Link></li>
                     <li className='bg-black bg-opacity-80 py-3 w-40  mx-3 rounded-l text-white  hover:scale-105 duration-100 ease-in-out'><Link to="/category/bottom">Bottom</Link></li>
