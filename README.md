@@ -1,6 +1,6 @@
-# React Clothing Ecommerce for Coder House
+# React Ecommerce for Coder House
 
-Name: Andres Soibelzon
+Name: Andres Soibelzon.
 Email: a.soibelzon@gmail.com
 
 Built with React, Javascript & Tailwind.
