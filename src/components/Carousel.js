@@ -3,10 +3,6 @@ import { Link } from 'react-router-dom';
 
 
 
-
-
-
-
 const images = ['https://i.ibb.co/bms8hVM/pr01.jpg', 'https://i.ibb.co/YZrDfR2/pr02.jpg', 'https://i.ibb.co/3vTc3nP/pr03.jpg', 'https://i.ibb.co/nPtfpg9/pr04.jpg', 'https://i.ibb.co/1RSTnDQ/pr05.jpg', 'https://i.ibb.co/k9yTfgr/pr06.jpg']
 // images must be an array of urls , if using Next JS this could something like
 // const images = ['/img/img1.png', '/img/img2.png', '/img/img3.png']
@@ -105,10 +101,10 @@ const Carousel = () => {
             </div>
 
             <div className=
-                'absolute  text-xl  w-30 rounded-xl flex  text-pink-500 pb-6 	'>
+                'absolute  lg:text-xl sm:text-l   rounded-xl flex  text-pink-500 pb-6 	'>
                 <ul className="flex content-center ">
-                    <li className='bg-black bg-opacity-80 py-3 w-40 mx-3 rounded-l	 text-white  hover:scale-105 duration-100 ease-in-out'><Link to="/category/top">Top</Link></li>
-                    <li className='bg-black bg-opacity-80 py-3 w-40  mx-3 rounded-l text-white  hover:scale-105 duration-100 ease-in-out'><Link to="/category/bottom">Bottom</Link></li>
+                    <li className='bg-black bg-opacity-80 py-3 w-20 sm:w-15 lg:w-40 mx-3 rounded-l	 text-white  hover:scale-105 duration-100 ease-in-out'><Link to="/category/top">Top</Link></li>
+                    <li className='bg-black bg-opacity-80 py-3 w-20 sm:w-15  lg:w-40  mx-3 rounded-l text-white  hover:scale-105 duration-100 ease-in-out'><Link to="/category/bottom">Bottom</Link></li>
                 </ul>
             </div>
 

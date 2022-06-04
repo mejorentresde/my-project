@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import Products from './firebase-examples/Products';
 
 
 
@@ -8,7 +7,7 @@ function Item({ product }) {
   return (
     
 
-    <div className=' w-1/4  px-3 pt-1 pb-3  hover:scale-105 duration-700 ease-in-out'>
+    <div className='  px-3 pt-1 pb-3  hover:scale-105 duration-700 ease-in-out w-1/2 sm:w-1/2 lg:w-1/4'>
       <div className=' shadow-xl bg-white  rounded-xl'>
 
       <Link to={`/product/${product.id}`}>
