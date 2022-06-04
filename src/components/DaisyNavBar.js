@@ -2,18 +2,16 @@ import imglogo from '../assets/img/logo-1.png';
 import CartWidget from './CartWidget';
 import {Link} from 'react-router-dom';
 
-import useCartContext from '../store/CartContext';
-
 const DaisyNavBar = () => {
 
   return (
-    <div className="navbar bg-base-100">
-      <div className="flex-none">
+    <div className="flex navbar bg-base-100">
+      <div className="">
         <Link to="/"  >
         <img className="	" width={250} src={imglogo} alt="logo" />
         </Link>
       </div>
-      <div className="flex-none">
+      <div className="">
         <ul className="menu menu-horizontal p-0  ">
           <li className='text-secondary ' tabindex="0">
             
