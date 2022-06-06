@@ -24,10 +24,10 @@ export function CartContextProvider({ children }) {
     //isInCart es una funcion que devuevle true o false
     //true si el itemID esta en el carrito
     //false si el itemID no esta en el carrito
-    const isInCart = (itemID) => {
+    const isInCart = (itemID, size) => {
         for (let index = 0; index < cart.length; index++) {
             let item = cart[index];
-            if (itemID == item.id) {
+            if (itemID == item.id && item.size == size) {
                 return true
             }
         }
@@ -40,8 +40,8 @@ export function CartContextProvider({ children }) {
     //Si el item ya existe en el carrito, le sumamos la cantidad
     //Si el item no esta en el carrito, lo agregamos
     //Guardamos el nuevo carrito en el estado
-    const addToCart = (item, cant) => {
-        const itemIsInCart = isInCart(item.id) //es un booleano si el item esta en el carrito o no
+    const addToCart = (item, cant, size) => {
+        let itemIsInCart = isInCart(item.id, size) //es un booleano si el item esta en el carrito o no
         if (itemIsInCart) {
             const newCart = cart.map((itemInCart) => {
                 if (itemInCart.id == item.id) {
@@ -57,7 +57,7 @@ export function CartContextProvider({ children }) {
 
         }
         else {
-            const newItem = { ...item, cant };
+            const newItem = { ...item, cant, size };
             const newCart = [...cart] //nuevo carrito con las mismas cosas que tiene el carrito existente
             newCart.push(newItem); //al nuevo carrito le agregamos el nuevo item
             setCart(newCart); //sobreescribir: al carrito del estado lo sobreescribimos con el nuevo carrito

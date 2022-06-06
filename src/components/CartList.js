@@ -17,6 +17,8 @@ const CartList = ({ product }) => {
 
                 <h2 className='px-6 '>Quantity: {product.cant}</h2>
 
+                <h2 className='px-6 '>Size: {product.size}</h2>
+
                 <h2 className='px-6 '>USD {product.price * product.cant} </h2>
 
                 <h2 className='text-primary cursor-pointer px-6 ' onClick={() => { removeFromCart(product.id) }}>Remove product</h2>
